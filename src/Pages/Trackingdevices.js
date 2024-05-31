@@ -6,7 +6,7 @@ const Trackingdevices = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-4">
       <div className="bg-[#F4F6FA] p-5">
-        <div className="w-full lg:w-[65vw] md:w-[55vw] rounded-xl bg-white p-10 ">
+        <div className="w-full lg:w-[54vw]  rounded-xl bg-white p-10 ">
           <div className="flex gap-5">
           <div className="w-[25vw] pr-5">
               <div className="text-[24px] lg:text-[30px] text-left">

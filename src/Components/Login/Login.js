@@ -37,7 +37,7 @@ const Login = () => {
             </Link>
           </div>
           <div className="mt-5">
-            <Link to="/Logbook">
+            <Link to="/home">
               <button className="bg-[#34B7C1] font-bold flex justify-center items-center gap-2 text-xl text-[white] h-[63px] w-full">
                 Login <IoArrowForward />
               </button>

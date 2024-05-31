@@ -352,6 +352,106 @@ const Userroles = () => {
                         </div>
                       )}
                     </tr>
+                    <tr className="border-b h-[79px]">
+                      <td className=" pl-2 text-left">Muhammad Zurrain</td>
+                      <td>Srhlogistics@outlook.com</td>
+                      <td>
+                        <div className="flex gap-2 items-center justify-center">
+                          <div className="w-[162px] h-[34px] bg-[#32D29633] rounded-2xl text-[#18A88C] flex justify-center gap-1 items-center">
+                            Supper Admin <img src={status} alt="" />
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="flex gap-2 items-center justify-center">
+                          <div className="w-[188px] h-[34px] bg-[#32D29633] rounded-2xl text-[#18A88C] flex justify-center  items-center">
+                            SRH Logistics LLC
+                          </div>
+                        </div>
+                      </td>
+                      <td className="">
+                        <div className="flex items-center justify-center">
+                          <div>
+                            <GoDotFill style={{ color: "#A44C4C " }} />
+                          </div>
+                          <div className="flex flex-col items-start">
+                            <span>Offline</span>
+                            <span>Last logout at 17 Jul, 2023</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="flex justify-center z-20 relative "
+                          onClick={toggleaction}
+                        >
+                          <HiOutlineDotsVertical />
+                        </div>
+                      </td>
+                      {Action && (
+                        <div className="w-[172px] absolute  p-5 flex flex-col gap-2 justify-start items-start  rounded-xl box-shadow right-2 mt-[3rem] z-40 bg-white">
+                          <div className="text-[#8E8F8F] cursor-pointer" onClick={()=>setEditUser(true)}>
+                            Edit
+                          </div>
+                          <div
+                            className="text-[#8E8F8F] text-left cursor-pointer"
+                            onClick={() => setResetpassword(true)}
+                          >
+                            Reset Password
+                          </div>
+                        </div>
+                      )}
+                    </tr>
+                    <tr className="border-b h-[79px]">
+                      <td className=" pl-2 text-left">Muhammad Zurrain</td>
+                      <td>Srhlogistics@outlook.com</td>
+                      <td>
+                        <div className="flex gap-2 items-center justify-center">
+                          <div className="w-[162px] h-[34px] bg-[#32D29633] rounded-2xl text-[#18A88C] flex justify-center gap-1 items-center">
+                            Supper Admin <img src={status} alt="" />
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="flex gap-2 items-center justify-center">
+                          <div className="w-[188px] h-[34px] bg-[#32D29633] rounded-2xl text-[#18A88C] flex justify-center  items-center">
+                            SRH Logistics LLC
+                          </div>
+                        </div>
+                      </td>
+                      <td className="">
+                        <div className="flex items-center justify-center">
+                          <div>
+                            <GoDotFill style={{ color: "#A44C4C " }} />
+                          </div>
+                          <div className="flex flex-col items-start">
+                            <span>Offline</span>
+                            <span>Last logout at 17 Jul, 2023</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="flex justify-center z-20 relative "
+                          onClick={toggleaction}
+                        >
+                          <HiOutlineDotsVertical />
+                        </div>
+                      </td>
+                      {Action && (
+                        <div className="w-[172px] absolute  p-5 flex flex-col gap-2 justify-start items-start  rounded-xl box-shadow right-2 mt-[3rem] z-40 bg-white">
+                          <div className="text-[#8E8F8F] cursor-pointer" onClick={()=>setEditUser(true)}>
+                            Edit
+                          </div>
+                          <div
+                            className="text-[#8E8F8F] text-left cursor-pointer"
+                            onClick={() => setResetpassword(true)}
+                          >
+                            Reset Password
+                          </div>
+                        </div>
+                      )}
+                    </tr>
                   </tbody>
                 </table>
               </div>

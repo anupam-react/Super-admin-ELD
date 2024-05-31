@@ -42,6 +42,7 @@ import EditDocs from "./Pages/EditDocs";
 import Logbook2 from "./Pages/Logbook2";
 import Subscription from "./Pages/Subscription";
 import Home from "./Pages/Home";
+import LayoutSuper from "./Layout/LayoutSuper";
 
 const router = createBrowserRouter([
   {
@@ -64,9 +65,22 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
+      { path: "/super-logbook", element: <Logbook2 /> },
+      { path: "/Companyprofile", element: <Companyprofile /> },
+      { path: "/Billingdetails", element: <Billingdetails /> },
+      { path: "/edit-docs", element: <EditDocs /> },
+      { path: "/subscription", element: <Subscription /> },
+      { path: "/home", element: <Home /> },
+    
+    ],
+  },
+  
+  {
+    path: "/",
+    element: <LayoutSuper />,
+    children: [
       { path: "/Dashboard", element: <Dashboard /> },
       { path: "/Logbook", element: <Logbook /> },
-      { path: "/super-logbook", element: <Logbook2 /> },
       { path: "/Logbook/:id", element: <LogbookDetails /> },
       { path: "/location", element: <Location /> },
       { path: "/park", element: <Park /> },
@@ -97,9 +111,6 @@ const router = createBrowserRouter([
       { path: "/Billingdetails", element: <Billingdetails /> },
       { path: "/Apisharing", element: <Apisharing /> },
       { path: "/Diagnosticevents", element: <Diagnosticevents /> },
-      { path: "/edit-docs", element: <EditDocs /> },
-      { path: "/subscription", element: <Subscription /> },
-      { path: "/home", element: <Home /> },
     
     ],
   },

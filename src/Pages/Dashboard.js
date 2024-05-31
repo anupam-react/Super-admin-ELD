@@ -3,8 +3,10 @@ import livebtn from "../Assets/Dashboard/livebtn.svg";
 import dot from "../Assets/Dashboard/dot.svg";
 import halfcircle from "../Assets/Dashboard/halfcircle.svg";
 import { GoDotFill } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const [selectedTab, setselectedTab] = useState("Today");
+  const navigate = useNavigate('')
   return (
     <div className="bg-[#F9FBFF] p-5  h-[400px]">
       <div className="flex justify-between">
@@ -17,7 +19,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row  gap-5 justify-between mt-5">
-        <div className=" box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 ">
+        <div className=" box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 cursor-pointer" onClick={()=> navigate('/Logbook')}>
           <div className="flex font-semibold text-[20px] items-center gap-2">
             <img src={dot} alt="" className="w-[11px] h-[17px]" /># Drivers
           </div>
@@ -37,7 +39,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 ">
+        <div className="box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 cursor-pointer" onClick={()=> navigate('/location')}>
           <div className="flex font-semibold text-[20px] items-center gap-2">
             <img src={dot} alt="" className="w-[11px] h-[17px]" /># Trucks &
             Vehicles
@@ -57,7 +59,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className=" box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 ">
+        <div className=" box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 cursor-pointer"onClick={()=> navigate('/Drivers')}>
           <div className="flex font-semibold text-[20px] items-center gap-2">
             <img src={dot} alt="" className="w-[11px] h-[17px]" /># Drivers
           </div>
@@ -80,38 +82,56 @@ const Dashboard = () => {
       </div>
       <div className="mt-5 bg-white  rounded-xl">
         <div className="flex gap-10 p-5 border-b ">
-          <div className={`cursor-pointer ${
-                selectedTab === "Today"
-                  ? "w-[208px] flex items-center justify-center gap-2 pb-2 underline-custom"
-                  : "w-[208px] flex items-center justify-center  gap-2"
-              }`}
-              onClick={() => setselectedTab("Today")}>Today</div>
-          <div className={`cursor-pointer ${
-                selectedTab === "7 Days"
-                  ? "w-[208px] flex items-center justify-center gap-2 pb-2 underline-custom"
-                  : "w-[208px] flex items-center justify-center  gap-2"
-              }`}
-              onClick={() => setselectedTab("7 Days")}>7 Days</div>
-          <div className={`cursor-pointer ${
-                selectedTab === "30 Days"
-                  ? "w-[208px] flex items-center justify-center gap-2 pb-2 underline-custom"
-                  : "w-[208px] flex items-center justify-center  gap-2"
-              }`}
-              onClick={() => setselectedTab("30 Days")}>30 Days</div>
+          <div
+            className={`cursor-pointer ${
+              selectedTab === "Today"
+                ? "w-[208px] flex items-center justify-center gap-2 pb-2 underline-custom"
+                : "w-[208px] flex items-center justify-center  gap-2"
+            }`}
+            onClick={() => setselectedTab("Today")}
+          >
+            Today
+          </div>
+          <div
+            className={`cursor-pointer ${
+              selectedTab === "7 Days"
+                ? "w-[208px] flex items-center justify-center gap-2 pb-2 underline-custom"
+                : "w-[208px] flex items-center justify-center  gap-2"
+            }`}
+            onClick={() => setselectedTab("7 Days")}
+          >
+            7 Days
+          </div>
+          <div
+            className={`cursor-pointer ${
+              selectedTab === "30 Days"
+                ? "w-[208px] flex items-center justify-center gap-2 pb-2 underline-custom"
+                : "w-[208px] flex items-center justify-center  gap-2"
+            }`}
+            onClick={() => setselectedTab("30 Days")}
+          >
+            30 Days
+          </div>
         </div>
-    
+
         <div className="mt-5 flex justify-between gap-5">
-          <div className="box-shadow rounded-xl border p-5 w-full">
+          <div className="box-shadow rounded-xl border p-5 w-full cursor-pointer" onClick={()=> navigate('/Logbook')}>
             <div className="flex font-semibold text-[20px] items-center gap-2">
               <img src={dot} alt="" className="w-[11px] h-[17px]" /> 5
+             
             </div>
             <div className="text-[20px] text-left pl-5 font-semibold ">
               # Signatures Missing
             </div>
           </div>
           <div className="box-shadow rounded-xl w-full border p-5">
-            <div className="flex font-semibold text-[20px] items-center gap-2">
-              <img src={dot} alt="" className="w-[11px] h-[17px]" /> 5
+            <div className="flex justify-between font-semibold text-[20px] items-center gap-2">
+              <div className="flex items-center gap-3">
+              <img src={dot} alt="" className="w-[11px] h-[17px]" /> 
+              <span>5</span>
+
+              </div>
+              <p className="text-[#34B7C1]">25%</p>
             </div>
             <div className="text-[20px] text-left pl-5 font-semibold ">
               # Signatures Missing
@@ -128,7 +148,7 @@ const Dashboard = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-5 justify-between mt-5">
-          <div className="w-full border box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 ">
+          <div className="w-full border box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 cursor-pointer" onClick={()=> navigate('/Reportdetails')}>
             <div className="flex font-semibold text-[20px] items-center gap-2">
               <img src={dot} alt="" className="w-[11px] h-[17px]" /># Assets
               Fleet Stats - Trucks
@@ -213,7 +233,6 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-
           <div className="w-full basis-1/3 border box-shadow  flex flex-col gap-10 rounded-xl bg-white py-5 pb-[50px] px-10 ">
             <div className="flex font-semibold text-[20px] items-center gap-2">
               <img src={dot} alt="" className="w-[11px] h-[17px]" /># Assets

@@ -51,76 +51,33 @@ const SuperSidebar = () => {
      </>
 }
 </div>
-       {open ?
        <>
         <Link to="/super-logbook">
-        <Sidebar.Item className="bg-white p-2 mb-2"  icon={logbook}>
+        <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2 hover:text-[#34B7C1]"  icon={logbook}>
         Logbook
         </Sidebar.Item>
         </Link>
         <Link to="/Reports">
-        <Sidebar.Item  className="bg-white p-2 mb-2" icon={report}>
+        <Sidebar.Item  className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={report}>
         Reports
         </Sidebar.Item>
         </Link>
         <Link to="/Iftatrips">
-        <Sidebar.Item className="bg-white p-2 mb-2" icon={ifta}>IFTA</Sidebar.Item>
+        <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={ifta}>IFTA</Sidebar.Item>
         </Link>
-        
         <Link to="/subscription">
-        <Sidebar.Item className="bg-white p-2 mb-2" icon={Devices}>Subscription</Sidebar.Item>
+        <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={Devices}>Subscription</Sidebar.Item>
         </Link>
         <Link to="/edit-docs">
-        <Sidebar.Item className="bg-white p-2 mb-2" icon={userrole}>Edit Docs</Sidebar.Item>
+        <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={userrole}>Edit Docs</Sidebar.Item>
         </Link>
         <Link to="/Apisharing">
-        <Sidebar.Item className="bg-white p-2 mb-2"  icon={fmcsa}>
+        <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]"  icon={fmcsa}>
         FMCSA
         </Sidebar.Item>
         </Link>
        </>
-       :
-       <>
-       
-       <Link to="/super-logbook">
-       <Sidebar.Item icon={logbook}>
-       
-       </Sidebar.Item>
-       </Link>
-    
-   
-    
-       <Link to="/Reports">
-       <Sidebar.Item  icon={report}>
-       </Sidebar.Item>
-       </Link>
-       <Link to="/Iftatrips">
-       <Sidebar.Item
-           icon={ifta}
-          
-         >
-         </Sidebar.Item>
-       </Link>
-    
-       <Link to="/subscription">
-       <Sidebar.Item
-           icon={Devices}
-         >
-           
-         </Sidebar.Item>
-       </Link>
-       <Link to="/edit-docs">
-       <Sidebar.Item  icon={userrole}>
       
-       </Sidebar.Item>
-       </Link>
-  
-       <Link to="/Apisharing">
-       <Sidebar.Item  icon={fmcsa}>
-       </Sidebar.Item>
-       </Link>
-      </>
-       } 
       </Sidebar.ItemGroup>
     </Sidebar.Items>
   </Sidebar>
