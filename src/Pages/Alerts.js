@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { GiSpeedometer } from "react-icons/gi";
-import { IoFilterOutline } from "react-icons/io5";
+import { IoCloseSharp, IoFilterOutline } from "react-icons/io5";
 import { PopUp } from "../Components/PopUp";
 import DateFilter from "../Components/DateFilter";
 
@@ -40,7 +40,7 @@ const Alerts = () => {
           </button>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-8">
         <table class="border w-full">
           <thead>
             <tr className="bg-[#F0FAFB] h-[65px]  ">
@@ -49,19 +49,19 @@ const Alerts = () => {
               </th>
 
               <th className="w-[250px] ">
-                <div className="flex  items-center justify-center gap-2">
+                <div className="flex  items-center justify-start gap-2">
                   Event
                   <IoFilterOutline />
                 </div>
               </th>
-              <th className="w-[250px] ">Driver</th>
+              <th className="w-[250px] text-start">Driver</th>
 
               <th className="w-[250px] ">
-                <div className="flex  items-center justify-center gap-2">
+                <div className="flex  items-center justify-start gap-2">
                   Vehicle <IoFilterOutline />
                 </div>
               </th>
-              <th className="w-[250px]">Location</th>
+              <th className="w-[250px] text-start">Location</th>
             </tr>
           </thead>
           <tbody>
@@ -77,7 +77,7 @@ const Alerts = () => {
               </td>
 
               <td className="">
-                <div className="flex items-center gap-2 justify-center">
+                <div className="flex items-center gap-2 justify-start">
                 <img
                   src="../Vector (11).png"
                   alt=""
@@ -89,8 +89,8 @@ const Alerts = () => {
                   Overspeeding
                 </div>
               </td>
-              <td className="text-center">Adam Blake Powers</td>
-              <td className="text-center">2101</td>
+              <td className="text-start">Adam Blake Powers</td>
+              <td className="text-start">2101</td>
               <td>I 77, Surry County, North Carolina</td>
             </tr>
             <tr className="border-y ">
@@ -104,7 +104,7 @@ const Alerts = () => {
               </td>
 
               <td className="">
-                <div className="flex items-center gap-2 justify-center">
+                <div className="flex items-center gap-2 justify-start">
                 <img
                   src="../Vector (11).png"
                   alt=""
@@ -116,8 +116,8 @@ const Alerts = () => {
                   Overspeeding
                 </div>
               </td>
-              <td className="text-center">Adam Blake Powers</td>
-              <td className="text-center">2101</td>
+              <td className="text-start">Adam Blake Powers</td>
+              <td className="text-start">2101</td>
               <td>I 77, Surry County, North Carolina</td>
             </tr>
             <tr className="border-y ">
@@ -131,7 +131,7 @@ const Alerts = () => {
               </td>
 
               <td className="">
-                <div className="flex items-center gap-2 justify-center">
+                <div className="flex items-center gap-2 justify-start">
                 <img
                   src="../Vector (11).png"
                   alt=""
@@ -143,20 +143,38 @@ const Alerts = () => {
                   Overspeeding
                 </div>
               </td>
-              <td className="text-center">Adam Blake Powers</td>
-              <td className="text-center">2101</td>
+              <td className="text-start">Adam Blake Powers</td>
+              <td className="text-start">2101</td>
               <td>I 77, Surry County, North Carolina</td>
             </tr>
+           
           </tbody>
         </table>
       </div>
-      <PopUp
-        title="Date Filter"
-        openModal={openPopUp}
-        setOpenModal={setOpenPopUp}
-      >
-        <DateFilter />
-      </PopUp>
+      {openPopUp ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between py-5 rounded-t">
+                  <h3 className="text-xl font-semibold text-black">Date Filter</h3>
+
+                  <span
+                    onClick={() => setOpenPopUp(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+                <hr className="mb-4"/>
+                <DateFilter />
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
+    
     </div>
   );
 };

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { IoFilterOutline } from "react-icons/io5";
+import { IoCloseSharp, IoFilterOutline } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { IoMdAdd, IoMdClose } from "react-icons/io";
-import report from "../Assets/Reports/report.svg";
+
 import { MdOutlineEdit } from "react-icons/md";
 import { LuArrowUpDown } from "react-icons/lu";
-import { PopUp } from "../Components/PopUp";
 import DateFilter from "../Components/DateFilter";
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
@@ -229,13 +228,30 @@ const Reportdetails = () => {
           </tbody>
         </table>
       </div>
-      <PopUp
-        title="Date Filter"
-        openModal={openPopUp}
-        setOpenModal={setOpenPopUp}
-      >
-        <DateFilter />
-      </PopUp>
+      {openPopUp ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between py-5 rounded-t">
+                  <h3 className="text-xl font-semibold text-black">Date Filter</h3>
+
+                  <span
+                    onClick={() => setOpenPopUp(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+                <hr className="mb-4"/>
+                <DateFilter />
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
+      
     </div>
   );
 };

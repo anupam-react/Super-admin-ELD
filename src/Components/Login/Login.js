@@ -22,10 +22,14 @@ const Login = () => {
           <div className="mt-2">
             <label>Password</label>
             <br />
+            <div className="relative">
             <input
-              className="border w-full h-[50px] mt-2 pl-4 placeholder:pl-2"
+              className="border w-full h-[50px] mt-2 pl-4 pr-12 placeholder:pl-2 "
               placeholder="Password"
             />
+            <img src="../Eye.png" alt='' className="absolute top-5 right-4"/>
+
+            </div>
           </div>
           <div className="flex justify-between mt-2">
             <div className="flex items-center gap-2">

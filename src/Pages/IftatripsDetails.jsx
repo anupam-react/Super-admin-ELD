@@ -3,6 +3,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { PopUp } from "../Components/PopUp";
 import DateFilter from "../Components/DateFilter";
+import { IoCloseSharp } from "react-icons/io5";
 const IftatripsDetails = () => {
   const [active, setActive] = useState(0);
   const [activeId, setActiveId] = useState(0);
@@ -203,20 +204,53 @@ const IftatripsDetails = () => {
           </div>
         </div>
       </div>
-      <PopUp
-        title="Date Filter"
-        openModal={openPopUp1}
-        setOpenModal={setOpenPopUp1}
-      >
-        <DateFilter />
-      </PopUp>
-      <PopUp
-        title="Date Filter"
-        openModal={openPopUp2}
-        setOpenModal={setOpenPopUp2}
-      >
-        <DateFilter />
-      </PopUp>
+      {openPopUp1 ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between py-5 rounded-t">
+                  <h3 className="text-xl font-semibold text-black">Date Filter</h3>
+
+                  <span
+                    onClick={() => setOpenPopUp1(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+                <hr className="mb-4"/>
+                <DateFilter />
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
+
+{openPopUp2 ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between py-5 rounded-t">
+                  <h3 className="text-xl font-semibold text-black">Date Filter</h3>
+
+                  <span
+                    onClick={() => setOpenPopUp2(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+                <hr className="mb-4"/>
+                <DateFilter />
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
     </div>
   );
 };

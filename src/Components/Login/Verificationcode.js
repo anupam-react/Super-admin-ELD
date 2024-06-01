@@ -1,7 +1,9 @@
 import React from "react";
 import { IoArrowForward } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Verificationcode = () => {
+  const navigate = useNavigate()
   return (
     <div className="background h-screen flex justify-center items-center">
       <div className="w-[500px] h-[700px] rounded-lg bg-[white]">
@@ -22,7 +24,7 @@ const Verificationcode = () => {
           </div>
 
           <div className="mt-5">
-            <button className="bg-[#34B7C1] uppercase font-bold flex justify-center items-center gap-2 text-xl text-[white] h-[63px] w-full">
+            <button onClick={()=> navigate('/')} className="bg-[#34B7C1] uppercase font-bold flex justify-center items-center gap-2 text-xl text-[white] h-[63px] w-full">
               Send Code <IoArrowForward />
             </button>
           </div>

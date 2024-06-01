@@ -65,12 +65,23 @@ const Header = () => {
           onClick={toggleDrawer}
         />
       <Drawer isOpen={isDrawerOpen} onClose={toggleDrawer} />
-      <Modal style={{background:"transparent" , display:"flex", justifyContent:"center" , alignItems:"center"}} dismissible show={openModal} onClose={() => setOpenModal(false)}>
-        <Modal.Header>   
-          Profile
-        </Modal.Header>
-        <Modal.Body>
-        <div className="text-center text-[#1F384C] flex items-center flex-col pb-4">
+        {openModal ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-end py-5 rounded-t">
+                  {/* <h3 className="text-xl font-semibold text-black">Date Filter</h3> */}
+
+                  <span
+                    onClick={() => setOpenModal(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+  
+                <div className="text-center text-[#1F384C] flex items-center flex-col pb-4">
                 <span className="font-bold ">Mudassar Iqbal</span>
                 <span>srhlogistic@zzzzz.com</span>
               </div>
@@ -104,10 +115,12 @@ const Header = () => {
                 </li>
             </Link>
               </ul>
-
-        </Modal.Body>
-
-      </Modal>
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
     </div>
 
       </div>

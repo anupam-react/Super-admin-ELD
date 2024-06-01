@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import profile from "../Assets/Header/profile.svg";
 import { BiSolidBell } from "react-icons/bi";
 import { PopUp } from "../Components/PopUp";
+import { IoCloseSharp } from "react-icons/io5";
 const LogbookDetails = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
@@ -247,13 +248,24 @@ const LogbookDetails = () => {
           </div>
         </div>
       </div>
-      <PopUp
-        title="Edit Elog Event - Adam Blake Powers/ Apr 10, 2024"
-        setOpenModal={setOpenModal}
-        openModal={openModal}
-        handleOpen={handleOpen}
-      >
-        <div>
+
+      {openModal ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between py-5 rounded-t">
+                  <h3 className="text-xl font-semibold text-[#646E87]">Edit Elog Event - Adam Blake Powers/ Apr 10, 2024</h3>
+
+                  <span
+                    onClick={() => setOpenModal(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+                <hr className="mb-4"/>
+                <div>
           <img src="../Frame 494.png" alt="" />
           <div className="flex justify-between mt-4">
             <div>
@@ -341,14 +353,29 @@ const LogbookDetails = () => {
                 <button className="text-white w-full py-2 bg-[#34B7C1] rounded-sm" style={{border:"1px solid #34B7C1"}}>Update</button>
           </div>
         </div>
-      </PopUp>
-      <PopUp
-        title="Edit Elog Form - Adam Blake Powers/ Apr 4,2024"
-        setOpenModal={setOpenModal2}
-        openModal={openModal2}
-        handleOpen={handleOpen2}
-      >
-     <div className=" flex">
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
+      {openModal2 ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="relative w-auto my-6 mx-auto max-w-5xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full px-5 pb-4 bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between py-5 rounded-t">
+                  <h3 className="text-xl font-semibold text-[#666666]">Edit Elog Form - Adam Blake Powers/ Apr 4,2024</h3>
+
+                  <span
+                    onClick={() => setOpenModal2(false)}
+                    className="cursor-pointer"
+                  >
+                    <IoCloseSharp />
+                  </span>
+                </div>
+                <hr className="mb-4"/>
+                <div className=" flex">
           <div
             className={`cursor-pointer ${
               selectedTab === "Active"
@@ -478,7 +505,13 @@ const LogbookDetails = () => {
             <button onClick={() => setOpenModal2(false)} className="text-[#F56C89] w-[250px] py-2 rounded-sm" style={{border:"1px solid #F56C89"}}>Cancel</button>
                 <button className="text-white w-[250px] py-2 bg-[#34B7C1] rounded-sm" style={{border:"1px solid #34B7C1"}}>Update</button>
           </div>
-      </PopUp>
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
+     
     </>
   );
 };
