@@ -114,7 +114,7 @@ const LogbookDetails = () => {
                   <th className=" text-center ">Duration</th>
                   <th className=" text-center ">Location</th>
                   <th className=" text-center "> Comment</th>
-                  <th className="text-center ">Actions</th>
+                  {/* <th className="text-center ">Actions</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -131,14 +131,14 @@ const LogbookDetails = () => {
                   </td>
                   <td className="text-center ">Kingsville, TX, 78363</td>
                   <td className="text-center ">No comment</td>
-                  <td className="flex justify-center items-center">
+                  {/* <td className="flex justify-center items-center">
                     <img
                       src="../Vector.png"
                       alt=""
                       className="cursor-pointer"
                       onClick={() => setOpenModal(true)}
                     />
-                  </td>
+                  </td> */}
                 </tr>
                 <tr className="border-b py-1">
                   <td className="flex justify-center items-center">
@@ -153,14 +153,14 @@ const LogbookDetails = () => {
                   </td>
                   <td className="text-center ">Kingsville, TX, 78363</td>
                   <td className="text-center ">No comment</td>
-                  <td className="flex justify-center items-center">
+                  {/* <td className="flex justify-center items-center">
                     <img
                       src="../Vector.png"
                       alt=""
                       className="cursor-pointer"
                       onClick={() => setOpenModal(true)}
                     />
-                  </td>
+                  </td> */}
                 </tr>
                 <tr className="border-b py-1">
                   <td className="flex justify-center items-center">
@@ -175,14 +175,14 @@ const LogbookDetails = () => {
                   </td>
                   <td className="text-center ">Kingsville, TX, 78363</td>
                   <td className="text-center ">No comment</td>
-                  <td className="flex justify-center items-center">
+                  {/* <td className="flex justify-center items-center">
                     <img
                       src="../Vector.png"
                       alt=""
                       className="cursor-pointer"
                       onClick={() => setOpenModal(true)}
                     />
-                  </td>
+                  </td> */}
                 </tr>
             
               </tbody>

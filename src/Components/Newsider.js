@@ -134,11 +134,11 @@ const Newsidebar = () => {
         </Link>
         {openDrivers && 
         <>
-        <Link to="/DeleteDrivers">
+        {/* <Link to="/DeleteDrivers">
         <Sidebar.Item className="bg-white text-[#273240] text-[18px] p-2 mb-2 hover:text-[#34B7C1]">
         Delete Drivers
         </Sidebar.Item>
-        </Link>
+        </Link> */}
         </>
         }
         <Link to="/Devices">

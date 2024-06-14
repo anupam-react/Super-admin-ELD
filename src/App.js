@@ -43,6 +43,8 @@ import Logbook2 from "./Pages/Logbook2";
 import Subscription from "./Pages/Subscription";
 import Home from "./Pages/Home";
 import LayoutSuper from "./Layout/LayoutSuper";
+import SubAdmin from "./Pages/SubAdmin";
+import SubAdminForm from "./Pages/SubAdminForm";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +73,8 @@ const router = createBrowserRouter([
       { path: "/edit-docs", element: <EditDocs /> },
       { path: "/subscription", element: <Subscription /> },
       { path: "/home", element: <Home /> },
+      { path: "/sub-admin", element: <SubAdmin /> },
+      { path: "/create-subadmin", element: <SubAdminForm /> },
     
     ],
   },

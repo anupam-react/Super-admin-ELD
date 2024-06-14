@@ -4,13 +4,15 @@ import { FaSearch } from "react-icons/fa";
 import profile from "../Assets/Header/profile.svg";
 import { BiSolidBell } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsPlayBtn } from "react-icons/bs";
 import Drawer from "./Drawer";
 import { Modal } from "flowbite-react";
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const navigate = useNavigate();
 
 
   const toggleDrawer = () => {
@@ -99,16 +101,21 @@ const Header = () => {
             </div>
 
               <ul>
-                <Link to="/Companyprofile">
-                  <li className="px-10 py-4 text-[#1F384C] font-[700] cursor-pointer flex gap-2">
+                
+                  <li onClick={()=>{
+                    navigate('/Companyprofile')
+                    setOpenModal(false)
+                  }} className="px-10 py-4 text-[#1F384C] font-[700] cursor-pointer flex gap-2">
                     Company profile
                   </li>
-                </Link>
-                <Link to="/Billingdetails">
-                  <li className="px-10 py-4 text-[#1F384C] font-[700] cursor-pointer flex gap-1">
+   
+                  <li  onClick={()=>{
+                    navigate('/Billingdetails')
+                    setOpenModal(false)
+                  }} className="px-10 py-4 text-[#1F384C] font-[700] cursor-pointer flex gap-1">
                     Billing Details
                   </li>
-                </Link>
+            
             <Link to="/">
                 <li className="px-10 py-4  font-[700] text-[#EB5757] cursor-pointer flex gap-2">
                   Logout

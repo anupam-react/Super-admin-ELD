@@ -65,15 +65,15 @@ const SuperSidebar = () => {
         <Link to="/Iftatrips">
         <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={ifta}>IFTA</Sidebar.Item>
         </Link>
-        <Link to="/subscription">
+        <Link to="/sub-admin">
         <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={Devices}>Sub admin</Sidebar.Item>
         </Link>
         <Link to="/subscription">
         <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={Devices}>Subscription</Sidebar.Item>
         </Link>
-        <Link to="/edit-docs">
+        {/* <Link to="/edit-docs">
         <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]" icon={userrole}>Edit</Sidebar.Item>
-        </Link>
+        </Link> */}
         <Link to="/Apisharing">
         <Sidebar.Item className="bg-white text-[#80848F] text-[18px] p-2 mb-2  hover:text-[#34B7C1]"  icon={fmcsa}>
         FMCSA
